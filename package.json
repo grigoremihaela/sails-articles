@@ -32,6 +32,9 @@
     "type": "git",
     "url": "git://github.com/Cezar/sails-articles.git"
   },
+  "engines": {
+    "node": "0.12.x"
+  },
   "author": "Cezar",
   "license": ""
 }
