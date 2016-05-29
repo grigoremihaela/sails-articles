@@ -45,5 +45,9 @@ module.exports.routes = {
   * for configuration options and examples.                                  *
   *                                                                          *
   ***************************************************************************/
-
+  
+  'get /user': 'UserController.index',
+  'get /articles': {
+    view: 'articles'
+  }
 };
