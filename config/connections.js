@@ -47,7 +47,13 @@ module.exports.connections = {
   //   password: 'YOUR_MYSQL_PASSWORD', //optional
   //   database: 'YOUR_MYSQL_DB' //optional
   // },
-
+  someMysqlServer: {
+     adapter: 'sails-mysql',
+     host: 'eu-cdbr-west-01.cleardb.com',
+     user: 'be4c7d972e342e', //optional
+     password: 'd1a648f4', //optional
+     database: 'heroku_088694ae9274e80' //optional
+  },
 
   /***************************************************************************
   *                                                                          *
