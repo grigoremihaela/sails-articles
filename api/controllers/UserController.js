@@ -58,8 +58,6 @@ module.exports = {
       todo: 'delete() is not implemented yet!'
     });
   }
-};
-
 
 };
 
