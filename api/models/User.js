@@ -26,6 +26,11 @@ module.exports = {
             var obj = this.toObject();
             delete obj.password;
             return obj;
+        },
+        // Add a reference to Articles
+        articles: {
+          collection: 'article',
+          via: 'owner'
         }
     },
 

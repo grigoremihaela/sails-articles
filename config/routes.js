@@ -47,4 +47,8 @@ module.exports.routes = {
   ***************************************************************************/
   
   'get /user': 'UserController.index',
+  'get /write-story': {
+    view: 'article-form'
+  },
+  'post /write-story': 'ArticleController.create'
 };
