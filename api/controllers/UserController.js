@@ -9,9 +9,14 @@ module.exports = {
 	/**
    * `UserController.index()`
    */
-  index: function (req, res) {
-    return res.json({
-      todo: 'index() is not implemented yet!'
+
+  index: function(req, res) {
+    console.log("Looking for index.ejs");
+    User.find(function(err, users) {
+      console.log(JSON.stringify(users));
+      res.view({
+        users: users
+      });
     });
   },
 

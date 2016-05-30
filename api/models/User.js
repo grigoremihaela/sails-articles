@@ -9,29 +9,41 @@ var bcrypt = require('bcrypt');
 module.exports = {
 
     attributes: {
+
+        id: {
+          type: 'integer',
+          unique: true,
+          primaryKey: true
+        },
+
         username: {
             type: 'string',
         },
+
         email: {
             type: 'string',
             required: true,
             unique: true
         },
+
         password: {
             type: 'string',
             required: true
         },
+
         // override default toJSON
         toJSON: function() {
             var obj = this.toObject();
             delete obj.password;
             return obj;
         },
+
         // Add a reference to Articles
         articles: {
           collection: 'article',
           via: 'owner'
         }
+
     },
 
     beforeCreate: function(user, cb) {

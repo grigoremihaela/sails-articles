@@ -1,6 +1,7 @@
 <div class="hero-spacer"></div>
 
-<form action="/write-story" method="post" role="form">
+<form action="/article" method="post" role="form">
+
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -8,10 +9,8 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                                <span class="glyphicon glyphicon-file"></span>
-                                POST NEW STORY
-                            </a>
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><span class="glyphicon glyphicon-file">
+                            </span>POST NEW STORY</a>
                         </h4>
                     </div>
                     <div id="collapseOne" class="panel-collapse collapse in">
@@ -19,32 +18,38 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Title" required />
+                                        <input type="text" class="form-control" name="title" id="title"  placeholder="Title" required />
                                     </div>
                                     <div class="form-group">
-                                        <textarea class="form-control" placeholder="Content" rows="5" required></textarea>
+                                        <textarea class="form-control" name="content" id="content" placeholder="Content" rows="5" required></textarea>
                                     </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="category">Category:</label>
-                                        <select class="form-control" id="category" style="">
+                                        <label for="category">Category</label>
+                                        <select class="form-control" name="category" id="category" >
                                             <option value="1">World</option>
-                                            <option value="2">Art</option>
-                                            <option value="3">Life</option>
+                                            <option value="11">Art</option>
+                                            <option value="21">Life</option>
                                         </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="tags">Owner</label>
+                                        <input type="text" class="form-control" name="owner" id="owner" placeholder="Owner" />
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="well well-sm well-primary">
-                                        <form class="form form-inline " role="form">
                                         <div class="form-group">
-                                            <button type="submit" class="btn btn-success btn-sm">
-                                                <span class="glyphicon glyphicon-floppy-disk"></span>
-                                                Save
-                                            </button>
+                                             <button type="submit" class="btn btn-success">
+                                                <span class="glyphicon glyphicon-floppy-disk"></span>Save</button>
                                         </div>
-                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -55,7 +60,6 @@
         </div>
     </div>
 </div>
+
 </form>
-
-
 

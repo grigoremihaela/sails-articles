@@ -1,0 +1,9 @@
+<h1>Users:</h1>
+<% if (users.length) { %>
+  <ul>
+    <% users.forEach(function(user){ %>
+      <li><%= user.email %></li>
+    <% }) %>
+  </ul>
+<% } %>
+

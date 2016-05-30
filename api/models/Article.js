@@ -9,20 +9,30 @@ module.exports = {
 
   attributes: {
 
+    id: {
+      type: 'integer',
+      unique: true,
+      primaryKey: true
+    },
+
   	title: {
       type: 'string'
     },
+
     content: {
-      type: 'string'
+      type: 'longtext'
     },
+
     // Add a reference to User
     owner: {
       model: 'user'
     },
+
     // Add a reference to Category
     category: {
       model: 'category'
     }
+
   }
 };
 

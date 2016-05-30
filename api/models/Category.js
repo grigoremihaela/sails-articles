@@ -8,14 +8,23 @@
 module.exports = {
 
   attributes: {
+
+    id: {
+      type: 'integer',
+      unique: true,
+      primaryKey: true
+    },
+
   	name: {
       type: 'string'
     },
+
     // Add a reference to Articles
     articles: {
       collection: 'article',
       via: 'category'
     }
+
   }
 };
 

@@ -29,7 +29,8 @@ var jsFilesToInject = [
   'js/dependencies/sails.io.js',
 
   // load jquery before bootstrap
-  'js/dependencies/jquery-1.11.1.min.js',
+  'js/dependencies/jquery.js',
+//  'js/dependencies/jquery-1.11.1.min.js',
 
   // Dependencies like jQuery, or Angular are brought in here
   'js/dependencies/**/*.js',
