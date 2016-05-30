@@ -14,9 +14,8 @@ module.exports = {
         	    content: params.content, 
         	    owner: params.owner, 
         	    category: params.category}).exec(function createCB(err,created){
-            return res.json({
-              notice: 'Created article with title ' + created.title
-            });
+            // return res.json({notice: 'Created article with title ' + created.title});
+            res.view('articles');
         });
     },
 };
