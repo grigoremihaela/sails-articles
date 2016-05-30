@@ -20,16 +20,16 @@ module.exports = {
     },
 
     index: function(req, res) {
-        Article.find({sort: 'createdAt DESC' }, function(err, articles) {
+        Article.find().populate('owner', {sort: 'createdAt DESC' }).exec(function (err, articles){
             res.view('articles', {
                 articles: articles
             });
+  
         });
-
     },
 
     indexWorld: function(req, res) {
-        Article.find({ where: { category: '1' }, sort: 'createdAt DESC' }, function(err, articles) {
+        Article.find({ where: { category: '1' } }).populate('owner', {sort: 'createdAt DESC' }).exec(function(err, articles) {
             res.view('world', {
                 articles: articles
             });
@@ -38,7 +38,7 @@ module.exports = {
     },
 
     indexArt: function(req, res) {
-        Article.find({ where: { category: '11' }, sort: 'createdAt DESC' }, function(err, articles) {
+        Article.find({ where: { category: '11' } }).populate('owner', {sort: 'createdAt DESC' }).exec(function(err, articles) {
             res.view('art', {
                 articles: articles
             });
@@ -46,7 +46,7 @@ module.exports = {
     },
 
     indexLife: function(req, res) {
-        Article.find({ where: { category: '21' }, sort: 'createdAt DESC' }, function(err, articles) {
+        Article.find({ where: { category: '21' } }).populate('owner', {sort: 'createdAt DESC' }).exec(function(err, articles) {
             res.view('life', {
                 articles: articles
             });
