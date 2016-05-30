@@ -32,9 +32,7 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': {
-    view: 'articles'
-  },
+  '/': 'ArticleController.index',
 
   /***************************************************************************
   *                                                                          *
@@ -47,6 +45,9 @@ module.exports.routes = {
   ***************************************************************************/
   
   'get /users': 'UserController.index',
+  'get /world': 'ArticleController.indexWorld',
+  'get /art': 'ArticleController.indexArt',
+  'get /life': 'ArticleController.indexLife',
   'get /article': {
     view: 'article-form'
   },
