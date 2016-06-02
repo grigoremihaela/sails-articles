@@ -13,6 +13,10 @@ a {
     margin-top: 50px;
 }
 
+.invisible hr{
+  background-color: transparent;
+}
+
 .only-bottom-margin {
   margin-top: 0px;
 }
@@ -26,6 +30,10 @@ a {
 /* Navbar */
 .navbar-default {
     background-color: #ffffff;
+}
+#invisible .navbar-default{
+  background-color: transparent;
+  margin-top: -40px;
 }
 /* title */
 .navbar-default .navbar-brand {
@@ -85,9 +93,6 @@ a {
 /* End navbar*/
 
 /* Header */
-.hero-feature {
-    margin-bottom: 30px;
-}
 
 .jumbotron {
     background-image: url("../../images/img/header-img.jpg");

@@ -6,10 +6,13 @@
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                         <h1 class="brand-heading">Welcome!</h1>
-                        <p class="intro-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
+                        <p>Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                         <a href="#" class="btn btn-primary btn-large">
                             Get started!
+                        </a>
+                        <a href="article" class="btn btn-primary btn-large">
+                            Start writing
                         </a>
                     </div>
                 </div>
@@ -18,54 +21,20 @@
         </header>
 
         
-        <div class="row">
-            <div class="col-md-8 col-sm-12 ">
+<div class="row">
 
-               <% if (articles.length) { %>
-    <% articles.forEach(function(article){ %>
+    <div class="col-md-8 col-sm-12 ">
 
-<!-- BEGIN Portlet PORTLET-->
-<div class="portlet portlet-bordered margin-bottom-30">
-    <div class="portlet-title">
-        <div class="caption caption-red">  
-            <img class="img-circle img-responsive" src="images/img/profile.png">
-            <span class="caption-subject text-uppercase"><%= article.owner.username %></span>
-            <span class="caption-helper"><%= article.createdAt.toDateString() %></span>
-        </div>
-        <div class="actions">
-            <a href="javascript:;" class="btn">
-                <i class="glyphicon glyphicon-pencil"></i>
-                Edit 
-            </a>
-            <a href="javascript:;" class="btn">
-                <i class="glyphicon glyphicon-paperclip"></i>
-                Add
-            </a>
-            <a href="javascript:;" class="btn btn-circle">
-                <i class="glyphicon glyphicon-resize-full"></i>
-            </a>
-        </div>
-    </div>
-    <img class="img-responsive" src="http://placehold.it/700x200" alt="">
-    <div class="portlet-body">
-        <h4><%= article.title %></h4>
-        <p><%= article.content %></p>
-    </div>
-</div>
-<!-- END Portlet PORTLET-->
-
-    <% }) %>
-  </ul>
-<% } %>
-
+        <% if (articles.length) { %>
+            <% articles.forEach(function(article){ %>
 
                 <!-- BEGIN Portlet PORTLET-->
                 <div class="portlet portlet-bordered margin-bottom-30">
                     <div class="portlet-title">
-                        <div class="caption">  
-                            <img class="img-circle img-responsive" src="images/img/profile.png">
-                            <span class="caption-subject text-uppercase"> Portlet</span>
-                            <span class="caption-helper">weekly stats...</span>
+                        <div class="caption caption-red">  
+                            <img class="img-circle img-responsive" src="<%= article.owner.avatar %>">
+                            <span class="caption-subject text-uppercase"><%= article.owner.username %></span>
+                            <span class="caption-helper"><%= article.createdAt.toDateString() %></span>
                         </div>
                         <div class="actions">
                             <a href="javascript:;" class="btn">
@@ -83,289 +52,21 @@
                     </div>
                     <img class="img-responsive" src="http://placehold.it/700x200" alt="">
                     <div class="portlet-body">
-                        <h4>Heading Text</h4>
-                        <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
+                        <h4><%= article.title %></h4>
+                        <p><%= article.content %></p>
                     </div>
                 </div>
                 <!-- END Portlet PORTLET-->
-            
-                <!-- BEGIN Portlet PORTLET-->
-                <div class="portlet portlet-bordered margin-bottom-30">
-                    <div class="portlet-title">
-                        <div class="caption caption-green">
-                            <img class="img-circle img-responsive" src="images/img/profile.png">
-                            <span class="caption-subject text-uppercase"> Portlet</span>
-                            <span class="caption-helper">monthly stats...</span>
-                        </div>
-                        <div class="actions">
-                            <div class="btn-group" data-toggle="buttons">
-                                <label class="btn grey-salsa active">
-                                <input type="radio" name="options" class="toggle" id="option1">Today</label>
-                                <label class="btn grey-salsa">
-                                <input type="radio" name="options" class="toggle" id="option2">Week</label>
-                                <label class="btn grey-salsa">
-                                <input type="radio" name="options" class="toggle" id="option2">Month</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portlet-body">
-                        <h4>Heading Text</h4>
-                        <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
-                    </div>
-                </div>
-                <!-- END Portlet PORTLET-->
-         
-                <!-- BEGIN Portlet PORTLET-->
-                <div class="portlet portlet-bordered margin-bottom-30">
-                    <div class="portlet-title">
-                        <div class="caption caption-red">
-                            <img class="img-circle img-responsive" src="images/img/profile.png">
-                            <span class="caption-subject text-uppercase"> Portlet</span>
-                            <span class="caption-helper">weekly stats...</span>
-                        </div>
-                        <div class="actions">
-                            <a href="javascript:;" class="btn btn-red btn-circle active">
-                                <i class="glyphicon glyphicon-paperclip"></i>
-                            </a>
-                            <a href="javascript:;" class="btn btn-red btn-circle">
-                                <i class="glyphicon glyphicon-pencil"></i>
-                            </a>
-                            <a href="javascript:;" class="btn btn-red btn-circle">
-                                <i class="glyphicon glyphicon-trash"></i>
-                            </a>
-                            <a href="javascript:;" class="btn btn-red btn-circle">
-                                <i class="glyphicon glyphicon-search"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <img class="img-responsive" src="http://placehold.it/700x200" alt="">
-                    <div class="portlet-body">
-                        <h4>Heading Text</h4>
-                        <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
-                    </div>
-                </div>
-                <!-- END Portlet PORTLET-->
+
+            <% }) %>
+        <% } %>
           
-                <!-- BEGIN Portlet PORTLET-->
-                <div class="portlet portlet-gray portlet-bordered margin-bottom-30">
-                    <div class="portlet-title">
-                        <div class="caption caption-purple">
-                            <img class="img-circle img-responsive" src="images/img/profile.png">
-                            <span class="caption-subject text-uppercase"> Pagination</span>
-                        </div>
-                        <div class="actions">
-                            <ul class="pagination">
-                                <li>
-                                    <a href="#" aria-label="Previous">
-                                        <span aria-hidden="true">«</span>
-                                    </a>
-                                </li>
-                                <li><a href="#">1</a></li>
-                                <li class="active"><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li>
-                                    <a href="#" aria-label="Next">
-                                        <span aria-hidden="true">»</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <img class="img-responsive" src="http://placehold.it/700x200" alt="">
-                    <div class="portlet-body">
-                        <h4>Heading Text</h4>
-                        <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
-                    </div>
-                </div>
-                <!-- END Portlet PORTLET-->
-          
-                <!-- BEGIN Portlet PORTLET-->
-                <div class="portlet portlet-bordered margin-bottom-30">
-                    <div class="portlet-title">
-                        <div class="caption">
-                            <img class="img-circle img-responsive" src="images/img/profile.png">
-                            <span class="caption-subject text-uppercase"> Form Input</span>
-                            <span class="caption-helper">more samples...</span>
-                        </div>
-                        <div class="inputs">
-                            <div class="portlet-input input-inline input-medium">
-                                <div class="input-group">
-                                    <input type="text" class="form-control input-circle-left" placeholder="search...">
-                                    <span class="input-group-btn">
-                                    <button class="btn btn-circle-right btn-default" type="submit">Go!</button>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portlet-body">
-                        <h4>Heading Text</h4>
-                        <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
-                    </div>
-                </div>
-                <!-- END Portlet PORTLET-->
-           
-                <!-- BEGIN Portlet PORTLET-->
-                <div class="portlet portlet-bordered margin-bottom-30">
-                    <div class="portlet-title">
-                        <div class="caption caption-red">
-                            <img class="img-circle img-responsive" src="http://placehold.it/30x30">
-                            <span class="caption-subject bold font-yellow-crusta uppercase">
-                            Tabs </span>
-                            <span class="caption-helper">more samples...</span>
-                        </div>
-                        <ul class="nav nav-tabs">
-                            <li>
-                                <a href="#portlet_tab3" data-toggle="tab">
-                                Tab 3 </a>
-                            </li>
-                            <li>
-                                <a href="#portlet_tab2" data-toggle="tab">
-                                Tab 2 </a>
-                            </li>
-                            <li class="active">
-                                <a href="#portlet_tab1" data-toggle="tab">
-                                Tab 1 </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <img class="img-responsive" src="http://placehold.it/700x200" alt="">
-                    <div class="portlet-body">
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="portlet_tab1">
-                                <h4>Tab 1 Content</h4>
-                                <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
-                            </div>
-                            <div class="tab-pane" id="portlet_tab2">
-                                <h4>Tab 2 Content</h4>
-                                <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
-                            </div>
-                            <div class="tab-pane" id="portlet_tab3">
-                                <h4>Tab 3 Content</h4>
-                                <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
-                                </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- END Portlet PORTLET-->
-            </div>
-            <!-- END col-8 -->
+    </div>
+    <!-- END col-8 -->
 
-            <div class="col-md-4 col-sm-12 hero-feature">
-                    <h5> World </h5>
-                    <h6> Cras mattis consectetur purus sit amet fermentum. </h6>
-                    <hr>
-      
-                    <div class="row margin-bottom-10">
-                        <div class="col-md-2 col-sm-2" > 
-                            <img class="img-circle img-responsive" src="images/img/profile.png">
-                        </div>
-                        <div class=" col-md-10 col-sm-10"> 
-                            <div> Cras mattis consectetur purus sit amet fermentum. </div>
-                            <span class="caption-helper">Name name</span>
-                        </div>
-                    </div>
-
-                    <div class="row margin-bottom-10">
-                        <div class="col-md-2 col-sm-2" > 
-                            <img class="img-circle img-responsive" src="images/img/profile.png">
-                        </div>
-                        <div class=" col-md-10 col-sm-10"> 
-                            <div> Cras mattis consectetur purus sit amet fermentum. </div>
-                            <span class="caption-helper">Name name</span>
-                        </div>
-                    </div>
-
-                    <div class="row margin-bottom-10">
-                        <div class="col-md-2 col-sm-2" > 
-                            <img class="img-circle img-responsive" src="images/img/profile.png">
-                        </div>
-                        <div class=" col-md-10 col-sm-10"> 
-                            <div> Cras mattis consectetur purus sit amet fermentum. </div>
-                            <span class="caption-helper">Name name</span>
-                        </div>
-                    </div>
-
-                    <div class="hero-spacer"></div>
-
-                    <h5> Art </h5>
-                    <h6> Cras mattis consectetur purus sit amet fermentum. </h6>
-                    <hr>
-      
-                    <div class="row margin-bottom-10">
-                        <div class="col-md-2 col-sm-2" > 
-                            <img class="img-circle img-responsive" src="images/img/profile.png">
-                        </div>
-                        <div class=" col-md-10 col-sm-10"> 
-                            <div> Cras mattis consectetur purus sit amet fermentum. </div>
-                            <span class="caption-helper">Name name</span>
-                        </div>
-                    </div>
-
-                    <div class="row margin-bottom-10">
-                        <div class="col-md-2 col-sm-2" > 
-                            <img class="img-circle img-responsive" src="images/img/profile.png">
-                        </div>
-                        <div class=" col-md-10 col-sm-10"> 
-                            <div> Cras mattis consectetur purus sit amet fermentum. </div>
-                            <span class="caption-helper">Name name</span>
-                        </div>
-                    </div>
-
-                    <div class="row margin-bottom-10">
-                        <div class="col-md-2 col-sm-2" > 
-                            <img class="img-circle img-responsive" src="images/img/profile.png">
-                        </div>
-                        <div class=" col-md-10 col-sm-10"> 
-                            <div> Cras mattis consectetur purus sit amet fermentum. </div>
-                            <span class="caption-helper">Name name</span>
-                        </div>
-                     </div>
-
-                     <h5> Life </h5>
-                    <h6> Cras mattis consectetur purus sit amet fermentum. </h6>
-                    <hr>
-      
-                    <div class="row margin-bottom-10">
-                        <div class="col-md-2 col-sm-2" > 
-                            <img class="img-circle img-responsive" src="images/img/profile.png">
-                        </div>
-                        <div class=" col-md-10 col-sm-10"> 
-                            <div> Cras mattis consectetur purus sit amet fermentum. </div>
-                            <span class="caption-helper">Name name</span>
-                        </div>
-                    </div>
-
-                    <div class="row margin-bottom-10">
-                        <div class="col-md-2 col-sm-2" > 
-                            <img class="img-circle img-responsive" src="images/img/profile.png">
-                        </div>
-                        <div class=" col-md-10 col-sm-10"> 
-                            <div> Cras mattis consectetur purus sit amet fermentum. </div>
-                            <span class="caption-helper">Name name</span>
-                        </div>
-                    </div>
-
-                    <div class="row margin-bottom-10">
-                        <div class="col-md-2 col-sm-2" > 
-                            <img class="img-circle img-responsive" src="images/img/profile.png">
-                        </div>
-                        <div class=" col-md-10 col-sm-10"> 
-                            <div> Cras mattis consectetur purus sit amet fermentum. </div>
-                            <span class="caption-helper">Name name</span>
-                        </div>
-                     </div>
-
-                     <div class="hero-spacer"></div>
-
-                    <h5> Write post </h5>
-                     <hr>
-                    <h6> Cras mattis consectetur purus sit amet fermentum. </h6>
-                    <div class="intro-body">
-                    <a href="#" class="btn btn-primary btn-large">
-                        Start writing
-                    </a>
-                    </div>
+    <div class="col-md-4 col-sm-12 margin-bottom-30">
+           <% include menu-right.ejs %>
+    </div>
 
 </div>
 <!-- /.row -->

@@ -31,6 +31,10 @@ module.exports = {
             required: true
         },
 
+        avatar: {
+            type: "String"
+        },
+
         // override default toJSON
         toJSON: function() {
             var obj = this.toObject();

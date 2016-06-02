@@ -1,0 +1,79 @@
+<% if(req.url != '/world'){ %>
+        <% if (firstWorldArticles.length) { %>
+            <a href="world">
+               <h5> World </h5>
+               <h6> Cras mattis consectetur purus sit amet fermentum. </h6>
+            </a>
+            <hr>
+            <% firstWorldArticles.forEach(function(article){ %>
+                <div class="row margin-bottom-10">
+                    <div class="col-md-2 col-sm-2" > 
+                        <img class="img-circle img-responsive" src="<%= article.owner.avatar %>">
+                    </div>
+                    <div class=" col-md-10 col-sm-10"> 
+                        <div> <%= article.title %> </div>
+                        <span class="caption-helper"> <%= article.owner.username %> </span>
+                    </div>
+                </div>
+            <% }) %>
+        <% } %>
+        <div class="spacer"></div>
+<% } %>
+
+<% if(req.url != '/art'){ %>
+        <% if (firstArtArticles.length) { %>
+            <a href="art">
+                <h5> Art </h5>
+                <h6> Cras mattis consectetur purus sit amet fermentum. </h6>
+            </a>
+            <hr>
+            <% firstArtArticles.forEach(function(article){ %>
+                <div class="row margin-bottom-10">
+                    <div class="col-md-2 col-sm-2" > 
+                        <img class="img-circle img-responsive" src="<%= article.owner.avatar %>">
+                    </div>
+                    <div class=" col-md-10 col-sm-10"> 
+                        <div> <%= article.title %> </div>
+                        <span class="caption-helper"> <%= article.owner.username %> </span>
+                    </div>
+                </div>
+            <% }) %>
+        <% } %>
+        <div class="spacer"></div>
+<% } %>                   
+
+<% if(req.url != '/life'){ %>      
+         <% if (firstLifeArticles.length) { %>
+            <a href="life">
+                <h5> Life </h5>
+                <h6> Cras mattis consectetur purus sit amet fermentum. </h6>
+            </a>
+            <hr>
+            <% firstLifeArticles.forEach(function(article){ %>
+                <div class="row margin-bottom-10">
+                    <div class="col-md-2 col-sm-2" > 
+                        <img class="img-circle img-responsive" src="<%= article.owner.avatar %>">
+                    </div>
+                    <div class=" col-md-10 col-sm-10"> 
+                        <div> <%= article.title %> </div>
+                        <span class="caption-helper"> <%= article.owner.username %> </span>
+                    </div>
+                </div>
+            <% }) %>
+        <% } %>
+        <div class="spacer"></div>
+<% } %>
+
+        <hr>
+
+        <div id="invisible">
+        <nav class = "navbar navbar-default" role = "navigation">
+            <div class = "navbar-header">
+               <a class = "navbar-brand" href = "#"><h6>About</h6></a>
+               <a class = "navbar-brand" href = "#"><h6>Help</h6></a>
+               <a class = "navbar-brand" href = "#"><h6>Privacy</h6></a>
+               <a class = "navbar-brand" href = "#"><h6>Term</h6></a>
+            </div>
+        </nav>
+        </div>
+

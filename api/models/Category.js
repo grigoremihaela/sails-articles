@@ -16,7 +16,8 @@ module.exports = {
     },
 
   	name: {
-      type: 'string'
+      type: 'string',
+      unique: true,
     },
 
     // Add a reference to Articles

@@ -43,7 +43,7 @@ module.exports.routes = {
   * for configuration options and examples.                                  *
   *                                                                          *
   ***************************************************************************/
-  
+
   'get /users': 'UserController.index',
   'get /world': 'ArticleController.indexWorld',
   'get /art': 'ArticleController.indexArt',
