@@ -34,11 +34,18 @@ module.exports.routes = {
 
   '/': 'ArticleController.index',
 
+  /***************************************************************************
+  *                                                                          *
+  * Auth                                                                     *
+  *                                                                          *
+  ***************************************************************************/
+
+  'GET /register':  'AuthController.getRegister',
+  'POST /register': 'AuthController.register',
   'GET /login': 'AuthController.login',
   'POST /login': 'AuthController.process',
   '/logout': 'AuthController.logout',
-  'GET /register':  'AuthController.getRegister',
-  'POST /register': 'AuthController.register',
+
 /*
   'POST /register': {controller: 'PassportController', action: 'register'},
   'POST /login':    {controller: 'PassportController', action: 'login'},
@@ -46,7 +53,6 @@ module.exports.routes = {
   'GET /register':  'PassportController.getRegister',
   'GET  /logout':   {controller: 'PassportController', action: 'logout'},
 */
-//  'GET /authUsersOnly':     'UserController.authUsersOnly',
 
   /***************************************************************************
   *                                                                          *
@@ -58,10 +64,11 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  'GET /users':  'UserController.index',
   'GET /world':  'ArticleController.indexWorld',
   'GET /art':    'ArticleController.indexArt',
   'GET /life':   'ArticleController.indexLife',
-  'GET /article': 'ArticleController.articleForm',
-  'POST /article':'ArticleController.create'
+  'GET /article': 'ArticleController.articleForm', // write a story
+  'POST /article':'ArticleController.create',      // save story
+
+  'GET /users':  'UserController.index'
 };

@@ -16,7 +16,7 @@ module.exports = {
         Article.create({
         	    title: params.title, 
         	    content: params.content, 
-        	    owner: params.owner, 
+        	    owner: req.session.passport.user, 
         	    category: params.category}).exec(function createCB(err,created){
             // return res.json({notice: 'Created article with title ' + created.title});
             return res.redirect('/');
