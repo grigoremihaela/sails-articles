@@ -6,7 +6,7 @@ var passport = require('passport');
 module.exports = {
 
   register: function (req, res) { 
-      var params = {username: req.body.username, email: req.body.email, password: req.body.password};
+      var params = {username: req.body.username, email: req.body.email, password: req.body.password, avatar:'images/img/avatar.jpg'};
 
       User.create(params).exec(function(err, user) {
         if (err) {
