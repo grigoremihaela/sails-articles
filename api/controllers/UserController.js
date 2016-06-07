@@ -11,13 +11,27 @@ module.exports = {
    */
 
   index: function(req, res) {
-    console.log("Looking for index.ejs");
+//    console.log("Looking for index.ejs");
     User.find(function(err, users) {
-      console.log(JSON.stringify(users));
+//      console.log(JSON.stringify(users));
+      if (req.user) {
+        var userAuth = req.user;
+        var userAuthId = req.session.passport.user;
+      };
       res.view({
-        users: users
+        users: users,
+        userAuth: userAuth[0]
       });
     });
+  },
+
+  authUsersOnly: function(req, res) {
+        var userAuth = req.user;
+        var userAuthId = req.session.passport.user;
+
+        return res.view('authUsersOnly', {
+            userAuth: userAuth[0]
+        });
   },
 
 

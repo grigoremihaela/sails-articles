@@ -5,6 +5,7 @@
  * @docs        :: http://sailsjs.org/documentation/concepts/models-and-orm/models
  */
 var bcrypt = require('bcrypt');
+// var md5 = require('md5');
 
 module.exports = {
 
@@ -18,6 +19,8 @@ module.exports = {
 
         username: {
             type: 'string',
+//            required: true,
+//            unique: true
         },
 
         email: {
@@ -63,8 +66,13 @@ module.exports = {
             }
           });
       });
+    }
+/*
+  beforeCreate: function(user, cb) {
+    user.password = md5(user.password);
+    cb();
   }
-
+*/
 };
 
 

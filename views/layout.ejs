@@ -68,8 +68,13 @@
       </form>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/article">Write a story</a></li>
-        <li><a href="/login">Login/Signup</a></li>
-        <li><a href="/logout">Logout</a></li>
+        <% if ( !req.user ) { %>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/register">Register</a></li>
+        <% } %>
+        <% if (req.user) { %>
+            <li><a href="/logout">Logout</a></li>
+        <% } %>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

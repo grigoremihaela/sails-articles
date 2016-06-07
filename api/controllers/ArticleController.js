@@ -7,6 +7,10 @@
 
 module.exports = {
 
+    articleForm: function (req, res) {
+      res.view('article-form')
+    },
+
 	create: function (req, res) {
         var params = req.params.all();
         Article.create({

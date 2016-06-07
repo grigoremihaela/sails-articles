@@ -34,6 +34,20 @@ module.exports.routes = {
 
   '/': 'ArticleController.index',
 
+  'GET /login': 'AuthController.login',
+  'POST /login': 'AuthController.process',
+  '/logout': 'AuthController.logout',
+  'GET /register':  'AuthController.getRegister',
+  'POST /register': 'AuthController.register',
+/*
+  'POST /register': {controller: 'PassportController', action: 'register'},
+  'POST /login':    {controller: 'PassportController', action: 'login'},
+  'GET /login':     'PassportController.getLogin',
+  'GET /register':  'PassportController.getRegister',
+  'GET  /logout':   {controller: 'PassportController', action: 'logout'},
+*/
+//  'GET /authUsersOnly':     'UserController.authUsersOnly',
+
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *
@@ -44,12 +58,10 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  'get /users': 'UserController.index',
-  'get /world': 'ArticleController.indexWorld',
-  'get /art': 'ArticleController.indexArt',
-  'get /life': 'ArticleController.indexLife',
-  'get /article': {
-    view: 'article-form'
-  },
-  'post /article': 'ArticleController.create'
+  'GET /users':  'UserController.index',
+  'GET /world':  'ArticleController.indexWorld',
+  'GET /art':    'ArticleController.indexArt',
+  'GET /life':   'ArticleController.indexLife',
+  'GET /article': 'ArticleController.articleForm',
+  'POST /article':'ArticleController.create'
 };

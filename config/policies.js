@@ -26,7 +26,14 @@ module.exports.policies = {
   *                                                                          *
   ***************************************************************************/
 
-  // '*': true,
+   '*': true,
+   UserController: {
+     '*': 'isAuthenticated'
+   },
+   ArticleController: {
+     articleForm: 'isAuthenticated',
+     create: 'isAuthenticated'
+   }
 
   /***************************************************************************
   *                                                                          *
