@@ -9,6 +9,11 @@ a {
     transition: all .35s;
 }
 
+.vertical-center {
+    margin: auto;
+    vertical-align: middle;
+}
+
 .spacer {
     margin-top: 50px;
 }

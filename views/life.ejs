@@ -9,34 +9,40 @@
     <% articles.forEach(function(article){ %>
 
 <!-- BEGIN Portlet PORTLET-->
-<div class="portlet portlet-bordered margin-bottom-30">
-    <div class="portlet-title">
-        <div class="caption caption-red">  
-            <img class="img-circle img-responsive" src="<%= article.owner.avatar %>">
-            <span class="caption-subject text-uppercase"><%= article.owner.username %></span>
-            <span class="caption-helper"><%= article.createdAt.toDateString() %></span>
-        </div>
-        <div class="actions">
-            <a href="javascript:;" class="btn">
-                <i class="glyphicon glyphicon-pencil"></i>
-                Edit 
-            </a>
-            <a href="javascript:;" class="btn">
-                <i class="glyphicon glyphicon-paperclip"></i>
-                Add
-            </a>
-            <a href="javascript:;" class="btn btn-circle">
-                <i class="glyphicon glyphicon-resize-full"></i>
-            </a>
-        </div>
-    </div>
-    <img class="img-responsive" src="http://placehold.it/700x200" alt="">
-    <div class="portlet-body">
-        <h4><%= article.title %></h4>
-        <p><%= article.content %></p>
-    </div>
-</div>
-<!-- END Portlet PORTLET-->
+                <div class="portlet portlet-bordered margin-bottom-30">
+                    <div class="portlet-title">
+                        <div class="caption caption-red">  
+                            <img class="img-circle img-responsive" src="<%= article.owner.avatar %>">
+                            <span class="caption-subject text-uppercase"><%= article.owner.username %></span>
+                            <span class="caption-helper"><%= article.createdAt.toDateString() %></span>
+                        </div>
+                           
+                        <div class="actions">
+                          <% if (req.isAuthenticated()) { %> 
+                          <% if ((article.owner.id) === (req.session.passport.user)) { %> 
+                            <a href="/article/edit/<%= article.id %>" class="btn">
+                                <i class="glyphicon glyphicon-pencil"></i>
+                                Edit 
+                            </a>
+                            <a href="javascript:;" class="btn">
+                                <i class="glyphicon glyphicon-paperclip"></i>
+                                Add
+                            </a>
+                          <% } %>
+                          <% } %>
+                            <a href="#" >
+                              <span class="glyphicon glyphicon-heart"></span>
+                            </a>
+                        </div>
+                        
+                    </div>
+                    <img class="img-responsive" src="http://placehold.it/700x200" alt="">
+                    <div class="portlet-body">
+                        <h4><%= article.title %></h4>
+                        <p><%= article.content %></p>
+                    </div>
+                </div>
+                <!-- END Portlet PORTLET-->
 
     <% }) %>
 <% } %>

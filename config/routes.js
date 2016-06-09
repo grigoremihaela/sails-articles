@@ -68,7 +68,9 @@ module.exports.routes = {
   'GET /art':    'ArticleController.indexArt',
   'GET /life':   'ArticleController.indexLife',
   'GET /article': 'ArticleController.articleForm', // write a story
-  'POST /article':'ArticleController.create',      // save story
+  'POST /article/create':'ArticleController.create',      // create story
+  'GET /article/edit/:id': 'ArticleController.edit', // edit article
+  'POST /article/edit/:id':'ArticleController.update',      // update story
 
   'GET /users':  'UserController.index'
 };

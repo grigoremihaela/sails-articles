@@ -1,0 +1,79 @@
+<form action="/article/edit/<%= article.id %>" method="post" role="form">
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><span class="glyphicon glyphicon-file">
+                            </span>POST NEW STORY</a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                    <label class="control-label">Title:</label>
+                    <input type="text" class="form-control" name="title" id="title"  value="<%= article.title %>" required />
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                    <label class="control-label">Category:</label>
+                                        
+                                            <% if (article.category.id === 1) { %>
+                                            <select class="form-control" name="category" id="category" required>
+                                                <option value="1" selected>World</option>
+                                                <option value="11">Art</option>
+                                                <option value="21">Life</option>
+                                             </select>
+                                            <% } %>
+                                            <% if (article.category.id === 11) { %>
+                                            <select class="form-control" name="category" id="category" required>
+                                                <option value="1">World</option>
+                                                <option value="11" selected>Art</option>
+                                                <option value="21">Life</option>
+                                             </select>
+                                            <% } %>
+                                            <% if (article.category.id === 21) { %>
+                                            <select class="form-control" name="category" id="category" required>
+                                                <option value="1" >World</option>
+                                                <option value="11">Art</option>
+                                                <option value="21" selected>Life</option>
+                                             </select>
+                                            <% } %>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                <textarea class="form-control" name="content" id="content" rows="5" required><%= article.content %></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-12 ">
+                                    <div class="well well-sm well-primary ">
+                                        <div class="form-group vertical-center">
+                                            <button type="submit" class="btn btn-success">Save Changes</button>
+                                            <input type="reset" class="btn btn-default" value="Cancel">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</form>
+

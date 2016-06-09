@@ -36,19 +36,25 @@
                             <span class="caption-subject text-uppercase"><%= article.owner.username %></span>
                             <span class="caption-helper"><%= article.createdAt.toDateString() %></span>
                         </div>
+                           
                         <div class="actions">
-                            <a href="javascript:;" class="btn">
+                          <% if (req.isAuthenticated()) { %> 
+                          <% if ((article.owner.id) === (req.session.passport.user)) { %> 
+                            <a href="/article/edit/<%= article.id %>" class="btn">
                                 <i class="glyphicon glyphicon-pencil"></i>
                                 Edit 
                             </a>
-                            <a href="javascript:;" class="btn">
+                            <a href="#" class="btn">
                                 <i class="glyphicon glyphicon-paperclip"></i>
                                 Add
                             </a>
-                            <a href="javascript:;" class="btn btn-circle">
-                                <i class="glyphicon glyphicon-resize-full"></i>
+                          <% } %>
+                          <% } %>
+                            <a href="#" >
+                              <span class="glyphicon glyphicon-heart"></span>
                             </a>
                         </div>
+                        
                     </div>
                     <img class="img-responsive" src="http://placehold.it/700x200" alt="">
                     <div class="portlet-body">
